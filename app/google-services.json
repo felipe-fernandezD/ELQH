@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "518037127719",
+    "project_id": "elqh-7c24f",
+    "storage_bucket": "elqh-7c24f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518037127719:android:b2dd394995a69f401ec402",
+        "android_client_info": {
+          "package_name": "com.example.elqh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPLcnHp08o1WgdpFaK0lro0L_jy7Xy9nA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
