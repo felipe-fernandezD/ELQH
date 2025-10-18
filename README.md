@@ -1,12 +1,162 @@
-ELQH - Tu App de Recetas de CocinaELQH es una aplicación móvil para Android diseñada para amantes de la cocina. Permite a los usuarios descubrir, guardar y gestionar sus recetas favoritas. La aplicación está construida con Kotlin y se integra con los servicios de Firebase para ofrecer una experiencia de usuario dinámica y persistente, incluyendo autenticación, base de datos en tiempo real y almacenamiento de archivos.📋 Características Principales•Autenticación de Usuarios: Sistema de inicio de sesión y registro para gestionar perfiles personales.•Exploración de Recetas: Visualiza un listado de recetas con imágenes, ingredientes e instrucciones.•Perfil de Usuario Personalizado:•Muestra el correo del usuario y su foto de perfil.•Permite a los usuarios cambiar su foto de perfil utilizando la cámara del dispositivo.•Lista de "Recetas Favoritas" guardadas por el usuario.•Base de Datos en la Nube: Toda la información (usuarios, recetas, favoritos) se almacena y sincroniza con Cloud Firestore.•Almacenamiento de Imágenes: Las fotos de perfil de los usuarios se suben y se gestionan a través de Firebase Storage.🛠️ Tecnologías Utilizadas•Lenguaje: Kotlin•Arquitectura: Actividades y Vistas (XML)•Base de Datos: Cloud Firestore•Autenticación: Firebase Authentication•Almacenamiento: Firebase Storage•Librerías Principales:•androidx.appcompat, material - Para componentes de UI modernos.•androidx.recyclerview - Para mostrar listas de recetas de manera eficiente.•com.github.bumptech.glide - Para cargar y mostrar imágenes desde URLs de manera asíncrona.•de.hdodenhof.circleimageview - Para mostrar las fotos de perfil en un formato circular.🚀 Instalación y ConfiguraciónPara clonar y ejecutar esta aplicación en tu propia máquina, necesitarás configurar el entorno de Firebase. Sigue estos pasos:Prerrequisitos•Android Studio (versión recomendada: Iguana o superior).•Una cuenta de Google para usar Firebase.Paso 1: Clona el RepositorioKotlingit clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorioPaso 2: Configura tu Proyecto de FirebaseEsta aplicación requiere un proyecto de Firebase para funcionar.1.Crea un Proyecto en Firebase:•Ve a la Consola de Firebase.•Haz clic en "Añadir proyecto" y sigue los pasos para crear un nuevo proyecto.2.Añade una App de Android a tu Proyecto:•Dentro de tu proyecto de Firebase, ve a la sección "Project Overview" y haz clic en el icono de Android (</>).•Registra tu aplicación. Es muy importante que el nombre del paquete coincida exactamente con el de este proyecto. Puedes encontrarlo en tu archivo app/build.gradle.kts (busca la línea packageName "com.example.elqh").•Descarga el archivo google-services.json que te proporcionará Firebase.3.Añade el Archivo google-services.json:•Copia el archivo google-services.json que acabas de descargar.•Pégalo dentro del directorio app/ de tu proyecto en Android Studio.La estructura debe quedar así:tu-repositorio/
-└── app/
-    ├── src/
-    └── google-services.json  <-- ¡AQUÍ!Paso 3: Configura los Servicios de FirebaseDentro de la consola de Firebase, habilita los siguientes servicios:1.Authentication:•Ve a la sección Authentication > Sign-in method.•Habilita el proveedor "Correo electrónico/Contraseña".2.Cloud Firestore:•Ve a la sección Cloud Firestore > Crear base de datos.•Inicia en Modo de Prueba para permitir lecturas/escrituras mientras desarrollas. (Recuerda que para producción, deberás establecer reglas de seguridad más estrictas).•En la base de datos, necesitarás al menos dos colecciones principales:•usuarios: Para guardar los perfiles (con profileImageUrl).•recetas: Para almacenar los datos de cada receta.3.Storage:•Ve a la sección Storage > Comenzar.•Configúralo usando las reglas de seguridad predeterminadas en modo de prueba. Esto permitirá subir las fotos de perfil. Las reglas iniciales suelen ser:Javarules_version = '2';
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /{allPaths=**} {
-      allow read, write: if request.time < timestamp.date(2025, 12, 31);
-    }
-  }
-}
+🍳 ELQH - Explora Lo Que Hay
+
+📱 Aplicación móvil para Android creada para amantes de la cocina.
+Descubre, guarda y gestiona tus recetas favoritas con una experiencia moderna, fluida y conectada a la nube.
+
+📖 Descripción General
+
+ELQH (Explora Lo Que Hay) es una app móvil para Android desarrollada en Kotlin.
+Permite a los usuarios descubrir nuevas recetas, guardar sus favoritas y personalizar su perfil con fotos almacenadas en la nube.
+
+Integrada completamente con Firebase, ofrece:
+
+Autenticación de usuarios 🔐
+
+Base de datos en tiempo real ☁️
+
+Gestión de imágenes 📸
+
+✨ Características Principales
+🔑 Autenticación de Usuarios
+
+Inicio de sesión y registro con Firebase Authentication.
+
+Gestión de perfiles personales.
+
+🍴 Exploración de Recetas
+
+Visualización de recetas con imágenes, ingredientes e instrucciones.
+
+Interfaz moderna con RecyclerView.
+
+👤 Perfil de Usuario
+
+Muestra el correo electrónico y la foto de perfil del usuario.
+
+Permite actualizar la foto usando la cámara del dispositivo.
+
+Incluye una lista de recetas favoritas.
+
+☁️ Sincronización en la Nube
+
+Todos los datos se guardan en Cloud Firestore.
+
+Fotos gestionadas a través de Firebase Storage.
+
+🧩 Tecnologías Utilizadas
+Categoría	Tecnología
+Lenguaje	Kotlin
+Arquitectura	Actividades y Vistas (XML)
+Base de Datos	Cloud Firestore
+Autenticación	Firebase Authentication
+Almacenamiento	Firebase Storage
+📚 Librerías Principales
+
+androidx.appcompat y material → Componentes modernos de UI.
+
+androidx.recyclerview → Listado eficiente de recetas.
+
+com.github.bumptech.glide → Carga y visualización de imágenes.
+
+de.hdodenhof.circleimageview → Fotos de perfil circulares.
+
+⚙️ Instalación y Configuración
+🔧 Prerrequisitos
+
+Android Studio (versión Iguana o superior).
+
+Cuenta de Google con acceso a Firebase.
+
+🧠 Pasos de Instalación
+
+Clona el repositorio
+
+git clone https://github.com/tu-usuario/tu-repositorio.git
+
+
+Configura Firebase
+
+Crea un proyecto en Firebase Console
+.
+
+Activa los servicios:
+
+🔐 Authentication
+
+🗄️ Cloud Firestore
+
+🖼️ Firebase Storage
+
+Descarga el archivo google-services.json y colócalo en:
+
+app/google-services.json
+
+
+Sincroniza con Gradle
+
+Abre el proyecto en Android Studio.
+
+Espera a que las dependencias se sincronicen correctamente.
+
+🗂️ Estructura del Proyecto
+📦 ELQH
+ ┣ 📂 app
+ ┃ ┣ 📂 src
+ ┃ ┃ ┣ 📂 main
+ ┃ ┃ ┃ ┣ 📂 java/com/elqh
+ ┃ ┃ ┃ ┃ ┣ 📜 MainActivity.kt
+ ┃ ┃ ┃ ┃ ┣ 📜 LoginActivity.kt
+ ┃ ┃ ┃ ┃ ┣ 📜 ProfileActivity.kt
+ ┃ ┃ ┃ ┣ 📂 res
+ ┃ ┃ ┃ ┃ ┣ 📂 layout
+ ┃ ┃ ┃ ┃ ┣ 📂 drawable
+ ┃ ┃ ┃ ┃ ┣ 📂 values
+ ┣ 📜 build.gradle.kts
+ ┣ 📜 README.md
+
+🖼️ Capturas de Pantalla
+
+(Agrega tus imágenes dentro de la carpeta /docs/screenshots/)
+
+Pantalla Principal	Perfil de Usuario
+
+	
+💡 Próximas Mejoras
+
+🔍 Búsqueda avanzada de recetas.
+
+💬 Sección de comentarios y valoraciones.
+
+📊 Recomendaciones personalizadas según el historial del usuario.
+
+🤝 Contribuciones
+
+¡Las contribuciones son bienvenidas!
+Sigue estos pasos:
+
+Realiza un fork del proyecto.
+
+Crea una nueva rama:
+
+git checkout -b feature/nueva-funcionalidad
+
+
+Realiza tus cambios y súbelos:
+
+git commit -m "Agrega nueva funcionalidad"
+git push origin feature/nueva-funcionalidad
+
+
+Envía un Pull Request 🚀
+
+📜 Licencia
+
+Este proyecto está bajo la licencia MIT.
+Consulta el archivo LICENSE
+ para más información.
+
+❤️ Autores
+
+Desarrollado con pasión por [Tu Nombre Aquí] 👨‍💻
+
+“Cocinar es como programar: ambos necesitan creatividad, precisión y amor por el detalle.” 🍲
