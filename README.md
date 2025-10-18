@@ -71,7 +71,7 @@ Cuenta de Google con acceso a Firebase.
 
 Clona el repositorio
 
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone https://github.com/felipe-fernandezD/ELQH.git
 
 
 Configura Firebase
@@ -104,9 +104,19 @@ Espera a que las dependencias se sincronicen correctamente.
  ┃ ┣ 📂 src
  ┃ ┃ ┣ 📂 main
  ┃ ┃ ┃ ┣ 📂 java/com/elqh
+ ┃ ┃ ┃ ┃ ┣ 📂 adapters
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜 MenuAdapter
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜 RecetaAdapter
+ ┃ ┃ ┃ ┃ ┣ 📂 models
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜 Categoria
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜 Receta
  ┃ ┃ ┃ ┃ ┣ 📜 MainActivity.kt
- ┃ ┃ ┃ ┃ ┣ 📜 LoginActivity.kt
- ┃ ┃ ┃ ┃ ┣ 📜 ProfileActivity.kt
+ ┃ ┃ ┃ ┃ ┣ 📜 Ingrdientes.kt
+ ┃ ┃ ┃ ┃ ┣ 📜 Inicio.kt
+ ┃ ┃ ┃ ┃ ┣ 📜 M_recetas.kt
+ ┃ ┃ ┃ ┃ ┣ 📜 Perfil.kt
+ ┃ ┃ ┃ ┃ ┣ 📜 RecetaDetallesActivity.kt
+ ┃ ┃ ┃ ┃ ┣ 📜 Registro.kt
  ┃ ┃ ┃ ┣ 📂 res
  ┃ ┃ ┃ ┃ ┣ 📂 layout
  ┃ ┃ ┃ ┃ ┣ 📂 drawable
@@ -114,49 +124,5 @@ Espera a que las dependencias se sincronicen correctamente.
  ┣ 📜 build.gradle.kts
  ┣ 📜 README.md
 
-🖼️ Capturas de Pantalla
-
-(Agrega tus imágenes dentro de la carpeta /docs/screenshots/)
-
-Pantalla Principal	Perfil de Usuario
-
-	
-💡 Próximas Mejoras
-
-🔍 Búsqueda avanzada de recetas.
-
-💬 Sección de comentarios y valoraciones.
-
-📊 Recomendaciones personalizadas según el historial del usuario.
-
-🤝 Contribuciones
-
-¡Las contribuciones son bienvenidas!
-Sigue estos pasos:
-
-Realiza un fork del proyecto.
-
-Crea una nueva rama:
-
-git checkout -b feature/nueva-funcionalidad
-
-
-Realiza tus cambios y súbelos:
-
-git commit -m "Agrega nueva funcionalidad"
-git push origin feature/nueva-funcionalidad
-
-
-Envía un Pull Request 🚀
-
-📜 Licencia
-
-Este proyecto está bajo la licencia MIT.
-Consulta el archivo LICENSE
- para más información.
-
-❤️ Autores
-
-Desarrollado con pasión por [Tu Nombre Aquí] 👨‍💻
 
 “Cocinar es como programar: ambos necesitan creatividad, precisión y amor por el detalle.” 🍲
