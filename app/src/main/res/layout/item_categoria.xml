@@ -2,8 +2,7 @@
     android:id="@+id/tvCategoria"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#EEEEEE"
     android:padding="12dp"
     android:textSize="18sp"
-    android:textStyle="bold"
-    android:background="#EEEEEE"
-    />
+    android:textStyle="bold" />

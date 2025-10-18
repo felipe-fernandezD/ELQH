@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.elqh.adapters.MenuAdapter
 import com.example.elqh.models.Categoria
 
-class ingrdientes : AppCompatActivity() {
+class Ingrdientes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,8 +29,14 @@ class ingrdientes : AppCompatActivity() {
         val btn_verificar = findViewById<Button>(R.id.btn_verificar)
 
         val categorias = listOf(
-            Categoria("Proteínas", listOf("Pollo", "Cerdo", "Vacuno", "Pescado", "Legumbres", "Huevo")),
-            Categoria("Verduras", listOf("Tomate", "Palta", "Papa", "Zapallo", "Cebolla", "Zanahoria", "Ajo")),
+            Categoria(
+                "Proteínas",
+                listOf("Pollo", "Cerdo", "Vacuno", "Pescado", "Legumbres", "Huevo")
+            ),
+            Categoria(
+                "Verduras",
+                listOf("Tomate", "Palta", "Papa", "Zapallo", "Cebolla", "Zanahoria", "Ajo")
+            ),
             Categoria("Aliños", listOf("Sal", "Orégano", "Comino", "Pimienta", "Merkén")),
             Categoria("Abarrotes", listOf("Arroz", "Fideos", "Harina", "Pan", "Azúcar", "Aceite"))
         )
@@ -52,7 +58,7 @@ class ingrdientes : AppCompatActivity() {
                 listaSeleccion.addAll(items)
             }
 
-            val intent = Intent(this, m_recetas::class.java)
+            val intent = Intent(this, M_recetas::class.java)
             intent.putStringArrayListExtra("seleccion", listaSeleccion)
             startActivity(intent)
         }

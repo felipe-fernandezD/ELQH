@@ -1,21 +1,19 @@
 package com.example.elqh
 
-import android.Manifest // Import para permisos
+import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager // Import para permisos
-import android.net.Uri // Import para URI de imagen
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.ImageButton // Import para el botón de la cámara
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts // Import para los nuevos launchers
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat // Import para chequear permisos
-import androidx.core.content.FileProvider // Import para crear URI de archivo
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -27,11 +25,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Source
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage // Import para Firebase Storage
+import com.google.firebase.storage.ktx.storage
 import de.hdodenhof.circleimageview.CircleImageView
-import java.io.File // Import para manejar archivos
+import java.io.File
 
-class perfil : AppCompatActivity() {
+class Perfil : AppCompatActivity() {
 
     // --- Propiedades con inicialización "lazy" ---
     private val auth: FirebaseAuth by lazy { Firebase.auth }
@@ -112,6 +110,7 @@ class perfil : AppCompatActivity() {
             ) == PackageManager.PERMISSION_GRANTED -> {
                 launchCamera() // Permiso concedido
             }
+
             else -> {
                 requestCameraPermissionLauncher.launch(Manifest.permission.CAMERA) // Pedir permiso
             }
@@ -146,7 +145,8 @@ class perfil : AppCompatActivity() {
                     db.collection("usuarios").document(user.uid)
                         .update("profileImageUrl", downloadUrl.toString())
                         .addOnSuccessListener {
-                            Toast.makeText(this, "Foto de perfil actualizada", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Foto de perfil actualizada", Toast.LENGTH_SHORT)
+                                .show()
                         }
                 }
             }
@@ -199,7 +199,8 @@ class perfil : AppCompatActivity() {
                                 val ingredientes = document.get("ingredientes") as List<String>
                                 val instrucciones = document.getString("instrucciones")!!
                                 val imagenNombre = document.getString("imagen")!!
-                                val imagenResId = resources.getIdentifier(imagenNombre, "drawable", packageName)
+                                val imagenResId =
+                                    resources.getIdentifier(imagenNombre, "drawable", packageName)
 
                                 Receta(id, nombre, ingredientes, imagenResId, instrucciones)
                             } catch (e: Exception) {
@@ -214,7 +215,11 @@ class perfil : AppCompatActivity() {
                     }
                     .addOnFailureListener { e ->
                         Log.e("perfil.kt", "Error al cargar detalles de recetas favoritas", e)
-                        Toast.makeText(this, "No se pudieron cargar las recetas favoritas.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this,
+                            "No se pudieron cargar las recetas favoritas.",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
             }
             .addOnFailureListener { e ->

@@ -1,3 +1,4 @@
+
 plugins {
     // This is the correct way using your version catalog
     alias(libs.plugins.android.application)
@@ -28,7 +29,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -55,7 +56,8 @@ dependencies {
     // Añade las dependencias de Firebase que necesitas (sin especificar versión)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
-
+    // Para la imagen circular
+    implementation("de.hdodenhof:circleimageview:3.1.0")
     // El resto de tus dependencias se mantienen igual
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -75,8 +77,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    // Para la imagen circular
-    implementation("de.hdodenhof:circleimageview:3.1.0")
+
 
 
 }

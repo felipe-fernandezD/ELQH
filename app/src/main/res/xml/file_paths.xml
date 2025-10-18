@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
+<paths>
     <!--
       Esta regla permite compartir archivos que están en el directorio de archivos
       internos de la aplicación. Corresponde a la ruta que se obtiene con 'filesDir'.

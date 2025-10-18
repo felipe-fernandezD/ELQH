@@ -41,22 +41,22 @@
 
         <!-- El resto de tus Activities no necesitan el intent-filter de LAUNCHER -->
         <activity
-            android:name=".inicio"
+            android:name=".Inicio"
             android:exported="false" />
         <activity
-            android:name=".ingrdientes"
+            android:name=".Ingrdientes"
             android:exported="false" />
         <activity
-            android:name=".m_recetas"
+            android:name=".M_recetas"
             android:exported="false" />
         <activity
             android:name=".RecetaDetalleActivity"
             android:exported="false" />
         <activity
-            android:name=".perfil"
+            android:name=".Perfil"
             android:exported="false" />
         <activity
-            android:name=".registro"
+            android:name=".Registro"
             android:exported="false" />
 
         <!-- 5. DECLARACIÓN DEL FILEPROVIDER -->

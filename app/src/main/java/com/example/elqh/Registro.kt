@@ -4,15 +4,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
 
-
-class registro : AppCompatActivity() {
+class Registro : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,12 +32,16 @@ class registro : AppCompatActivity() {
                             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
                             finish() // Vuelve a la pantalla de login
                         } else {
-                            Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this,
+                                "Error: ${task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
-            }
-            else {
-                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }

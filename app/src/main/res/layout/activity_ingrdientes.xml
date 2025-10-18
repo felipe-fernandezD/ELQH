@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#DEC70C0C"
     app:layout_anchorGravity="center"
-    tools:context=".ingrdientes">
+    tools:context=".Ingrdientes">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -67,7 +67,8 @@ class RecetaDetalleActivity : AppCompatActivity() {
         // --- POPULAR LA UI CON LOS DATOS DE LA RECETA ---
         img.setImageResource(receta.imagen)
         nombre.text = receta.nombre
-        descripcion.text = receta.instrucciones.replace("\\n", "\n") // Reemplaza para mostrar saltos de línea
+        descripcion.text =
+            receta.instrucciones.replace("\\n", "\n") // Reemplaza para mostrar saltos de línea
 
         // Crear checkboxes para los ingredientes
         receta.ingredientes.forEach { ingrediente ->

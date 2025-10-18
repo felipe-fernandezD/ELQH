@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class inicio : AppCompatActivity() {
+class Inicio : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,21 +19,21 @@ class inicio : AppCompatActivity() {
             insets
         }
         //elementos de la paguina
-        val btn_ingrediente= findViewById<Button>(R.id.btn_ingred)
-        val btn_recetas= findViewById<Button>(R.id.btn_recetas)
-        val btn_perfil= findViewById<Button>(R.id.btn_perfil)
+        val btn_ingrediente = findViewById<Button>(R.id.btn_ingred)
+        val btn_recetas = findViewById<Button>(R.id.btn_recetas)
+        val btn_perfil = findViewById<Button>(R.id.btn_perfil)
 
         btn_recetas.setOnClickListener {
-            val intent = Intent(this, m_recetas::class.java)
+            val intent = Intent(this, M_recetas::class.java)
             startActivity(intent)
         }
         btn_ingrediente.setOnClickListener {
-            val intent = Intent(this, ingrdientes::class.java)
+            val intent = Intent(this, Ingrdientes::class.java)
             startActivity(intent)
         }
         btn_perfil.setOnClickListener {
-            val intent = Intent(this, perfil::class.java)
+            val intent = Intent(this, Perfil::class.java)
             startActivity(intent)
         }
-        }
     }
+}

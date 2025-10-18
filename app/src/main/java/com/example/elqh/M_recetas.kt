@@ -19,7 +19,7 @@ import com.google.firebase.firestore.Source
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class m_recetas : AppCompatActivity() {
+class M_recetas : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +66,11 @@ class m_recetas : AppCompatActivity() {
         btnAtras.setOnClickListener { finish() }
     }
 
-    private fun obtenerRecetasDelServidor(db: FirebaseFirestore, recycler: RecyclerView, seleccion: ArrayList<String>) {
+    private fun obtenerRecetasDelServidor(
+        db: FirebaseFirestore,
+        recycler: RecyclerView,
+        seleccion: ArrayList<String>
+    ) {
         db.collection("recetas").get(Source.SERVER)
             .addOnSuccessListener { result ->
                 Log.d("m_recetas", "Recetas cargadas desde el SERVIDOR.")
@@ -74,11 +78,19 @@ class m_recetas : AppCompatActivity() {
             }
             .addOnFailureListener { exception ->
                 Log.e("m_recetas", "Error definitivo al obtener documentos.", exception)
-                Toast.makeText(this, "No se pudieron cargar las recetas. Revisa tu conexión.", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this,
+                    "No se pudieron cargar las recetas. Revisa tu conexión.",
+                    Toast.LENGTH_LONG
+                ).show()
             }
     }
 
-    private fun procesarYMostrarRecetas(result: com.google.firebase.firestore.QuerySnapshot, recycler: RecyclerView, seleccion: ArrayList<String>) {
+    private fun procesarYMostrarRecetas(
+        result: com.google.firebase.firestore.QuerySnapshot,
+        recycler: RecyclerView,
+        seleccion: ArrayList<String>
+    ) {
         val recetas = result.map { document ->
             // Convierte cada documento de Firestore en un objeto Receta
             val id = document.id

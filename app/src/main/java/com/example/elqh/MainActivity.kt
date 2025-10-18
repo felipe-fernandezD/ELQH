@@ -37,21 +37,27 @@ class MainActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, inicio::class.java)
+                            Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT)
+                                .show()
+                            val intent = Intent(this, Inicio::class.java)
                             startActivity(intent)
                             finish()
                         } else {
-                            Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this,
+                                "Error: ${task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
             } else {
-                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
         registerButton.setOnClickListener {
-            val intent = Intent(this, registro::class.java)
+            val intent = Intent(this, Registro::class.java)
             startActivity(intent)
         }
 
